@@ -1,0 +1,16 @@
+<div class="contents row">
+  <div class="container">
+    <h3>Post</h3>
+    <%= form_with(model: @article, local: true) do |form| %>
+      <%= form.text_field :country, placeholder: "Country" %>
+      <%= form.text_field :season, placeholder: "Season" %>
+      <%= form.text_field :city, placeholder: "City" %>
+      <%= form.text_field :English, placeholder: "English" %>
+      <%= form.text_field :nice, placeholder: "Nice" %>
+      <%= form.text_field :cleanliness, placeholder: "Cleanliness" %>
+      <%= form.text_field :nice, placeholder: "Nice" %>
+      <%= form.text_area :content, placeholder: "Content", rows: "10" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
