@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :articles
+
   validates :nickname, presence: true
 
   PASSWORD_REGEX = /\A(?=.*?[A-z])(?=.*?\d)[A-z\d]+\z/i.freeze
