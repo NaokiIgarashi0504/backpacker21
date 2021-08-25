@@ -2,7 +2,7 @@
   <div class="container">
     <h3>Post</h3>
     <%= form_with(model: @article, local: true) do |form| %>
-      <%= form.text_field :image, placeholder: "Image Url" %>
+      <%= form.file_field :image %>
       <%= form.text_field :country, placeholder: "Which Country" %>
       <%= form.text_field :city, placeholder: "City,Town" %>
       <%= form.text_field :season, placeholder: "Date" %>

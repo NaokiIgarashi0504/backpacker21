@@ -18,7 +18,7 @@ class Article < ApplicationRecord
     validates :content
   end
 
-  validates :country, :city, :season, presence: true, format: { with: /^[a-zA-Z0-9]+$/ }
+  validates :country, :city, :season, presence: true, format: { with: /\A[a-zA-Z0-9]+\z/ }
 
   validates :english_id, :nice_id, :safe_id, numericality: { other_than: 1, message: "can't be blank" }
 end
