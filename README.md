@@ -23,9 +23,9 @@
 | country      | integer     | null: false                    |
 | season       | string      | null: false                    |
 | city         | string      | null: false                    |
-| English      | string      | null: false                    |
-| nice         | integer     | null: false                    |
-| cleanliness  | string      | null: false                    |
+| english_id      | string      | null: false                    |
+| nice_id         | integer     | null: false                    |
+| safe_id  | string      | null: false                    |
 | content      | text        | null: false                    |
 | user         | references  | null: false, foreign_key: true |
 
