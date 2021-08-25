@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2021_08_24_114129) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "country_id", null: false
+    t.string "country", null: false
     t.string "season", null: false
     t.string "city", null: false
-    t.integer "English_id", null: false
+    t.integer "english_id", null: false
     t.integer "nice_id", null: false
-    t.integer "cleanliness_id", null: false
+    t.integer "safe_id", null: false
     t.text "content", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

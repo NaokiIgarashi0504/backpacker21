@@ -2,12 +2,13 @@
   <div class="container">
     <h3>Post</h3>
     <%= form_with(model: @article, local: true) do |form| %>
-      <%= form.collection_select(:country_id, Country.all, :id, :name, {},) %>
-      <%= form.text_field :season, placeholder: "Season" %>
-      <%= form.text_field :city, placeholder: "City" %>
+      <%= form.text_field :image, placeholder: "Image Url" %>
+      <%= form.text_field :country, placeholder: "Which Country" %>
+      <%= form.text_field :city, placeholder: "City,Town" %>
+      <%= form.text_field :season, placeholder: "Date" %>
       <%= form.collection_select(:english_id, English.all, :id, :name, {},) %>
+      <%= form.collection_select(:safe_id, Safe.all, :id, :name, {},) %>
       <%= form.collection_select(:nice_id, Nice.all, :id, :name, {},) %>
-      <%= form.collection_select(:cleanliness_id, Cleanliness.all, :id, :name, {},) %>
       <%= form.text_area :content, placeholder: "Content", rows: "10" %>
       <%= form.submit "SEND" %>
     <% end %>

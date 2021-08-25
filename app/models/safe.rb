@@ -1,6 +1,6 @@
-class Cleanliness < ActiveHash::Base
+class Safe < ActiveHash::Base
   self.data = [
-    { id: 1, name: 'The beauty of the city' },
+    { id: 1, name: 'Safety level' },
     { id: 2, name: '★' },
     { id: 3, name: '★★' },
     { id: 4, name: '★★★' },
