@@ -1,10 +1,10 @@
 <div class="card">
   <%= link_to image_tag(article.image, class: :card__img ), article_path(article.id)%>
   <div class="card__body">
-    <%= link_to article.title, article_path(article.id), class: :card__title%>
+    <%= link_to article.country, article_path(article.id), class: :card__title%>
     <p class="card__summary">
       <%= article.country %>
     </p>
-    <%= link_to "by #{article.user.name}", user_path(article.user.id), class: :card__user %>
+    <%= link_to "by #{article.user.nickname}", "#", class: :card__user %>
   </div>
 </div>
