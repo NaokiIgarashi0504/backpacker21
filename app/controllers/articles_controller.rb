@@ -17,6 +17,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   private
   def article_params
     params.require(:article).permit(:image, :country, :city, :season, :english_id, :safe_id, :nice_id, :content).merge(user_id: current_user.id)
