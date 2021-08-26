@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :move_set, except: [:index, :new, :create, :show, :destroy, :update]
+  before_action :move_set, except: [:index, :new, :create, :destroy, :update]
   before_action :move_to_index, except: [:index, :new, :create, :show, :destroy, :update]
 
   def index
@@ -22,7 +22,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @comment = Comment.new
+    @comments = @article.comments.includes(:user)
   end
 
   def edit
