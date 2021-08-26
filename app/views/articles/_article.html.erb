@@ -3,7 +3,7 @@
   <div class="card__body">
     <%= link_to article.country, article_path(article.id), class: :card__title%>
     <p class="card__summary">
-      <%= article.country %>
+      <%= article.nice.name %>
     </p>
     <%= link_to "by #{article.user.nickname}", "#", class: :card__user %>
   </div>
