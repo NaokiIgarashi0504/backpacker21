@@ -57,8 +57,30 @@
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
-      
+      <% if user_signed_in? %>
+          <%= form_with(model: [@article, @comment], local: true) do |f| %>
+            <div class="field">
+              <%= f.label :text, "Comment" %><br />
+              <%= f.text_field :text, id:"comment_text" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "Send", class: :form__btn  %>
+            </div>
+          <% end %>
+        <% end %> 
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <% @comments.each do |comments| %>
+              <li class="comments_list">
+                <%= comments.text %>
+                <%= link_to comments.user.nickname, "#", class: :comment_user %>
+              </li>
+            <% end %>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
       </div>
     </div>
   </div>
 </main>
+
