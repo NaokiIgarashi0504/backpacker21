@@ -1,6 +1,6 @@
 class English < ActiveHash::Base
   self.data = [
-    { id: 1, name: 'able to communicate in English' },
+    { id: 1, name: '--' },
     { id: 2, name: 'Yes' },
     { id: 3, name: 'NO' },
   ]
