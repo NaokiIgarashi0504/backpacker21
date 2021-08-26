@@ -28,6 +28,15 @@ class ArticlesController < ApplicationController
   def edit
   end
 
+  def update
+    article = Article.find(params[:id])
+    if Article.update(article_params)
+      redirect_to article_path
+    else
+      redirect_to action: :edit
+    end
+  end
+
   def destroy
     article = Article.find(params[:id])
     article.destroy
@@ -48,5 +57,4 @@ class ArticlesController < ApplicationController
       redirect_to action: :index
     end
   end
-
 end
