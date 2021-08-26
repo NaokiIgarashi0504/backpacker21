@@ -24,9 +24,33 @@
           </p>
         </div>
         <div class="prototype__detail">
+          <p class="detail__title">Safety level</p>
+          <p class="detail__message">
+            <%= @article.safe.name %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">City,Town</p>
+          <p class="detail__message">
+            <%= @article.city %>
+          </p>
+        </div>
+        <div class="prototype__detail">
           <p class="detail__title">Date</p>
           <p class="detail__message">
             <%= @article.season %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">Able to communicate in English</p>
+          <p class="detail__message">
+            <%= @article.english.name %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">Free article</p>
+          <p class="detail__message">
+            <%= @article.content %>
           </p>
         </div>
       </div>
