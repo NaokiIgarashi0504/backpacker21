@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     document.getElementById('prototype_title').addEventListener('change', function(e){
       const imageContent = document.querySelector('img');
-      if (imageContent){
-        imageContent.remove();
-      }
       
       const file = e.target.files[0];
       const blob = window.URL.createObjectURL(file);

@@ -1,12 +1,15 @@
 <%= form_with model: article, local: true do |f|%>
   <div class="field">
     <%= f.label :image, "Photo" %><br />
-    <%= f.file_field :image, id:"prototype_title" %>
+    <%= f.file_field :image, name: 'article[images][]',id:"prototype_title" %>
   </div>
   <div id="image-list"></div>
-  <% if @article.image.present? %>
+  <% if @article.images.present? %>
   <%= image_tag @article.image, class: 'buy-item-img' %>
   <% end %>
+  <% @article.images.each do |image| %>
+  <%= image_tag image, class: 'images' %>
+<% end %>
 
   <div class="field">
     <%= f.label :country, "Country" %><br />

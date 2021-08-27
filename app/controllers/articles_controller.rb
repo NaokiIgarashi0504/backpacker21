@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:image, :country, :city, :season, :english_id, :safe_id, :nice_id, :content).merge(user_id: current_user.id)
+    params.require(:article).permit(:image, :country, :city, :season, :english_id, :safe_id, :nice_id, :content, images: []).merge(user_id: current_user.id)
   end
 
   def move_set
