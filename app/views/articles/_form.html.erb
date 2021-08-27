@@ -4,6 +4,9 @@
     <%= f.file_field :image, id:"prototype_title" %>
   </div>
   <div id="image-list"></div>
+  <% if @article.image.present? %>
+  <%= image_tag @article.image, class: 'buy-item-img' %>
+  <% end %>
 
   <div class="field">
     <%= f.label :country, "Country" %><br />
