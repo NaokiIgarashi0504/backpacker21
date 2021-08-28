@@ -14,7 +14,6 @@
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
-      <div id="image-list"></div>
         <% @article.images.each do |image| %>
         <%= image_tag image, class: 'images' %>
       <% end %>

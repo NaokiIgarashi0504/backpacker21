@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many_attached :images
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -23,4 +23,12 @@ class Article < ApplicationRecord
   validates :season, presence: true, format: { with: /\A\d{4}-\d{2}-\d{2}\z/ }
   
   validates :english_id, :nice_id, :safe_id, numericality: { other_than: 1, message: "can't be blank" }
+
+  def self.search(search)
+    if search != ""
+      Article.where('country LIKE(?)', "%#{search}%")
+    else
+      Article.all
+    end
+  end
 end
