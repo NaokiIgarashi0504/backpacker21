@@ -1,11 +1,11 @@
 <%= form_with model: article, local: true do |f|%>
   <div class="field">
-    <%= f.label :image, "Photo" %><br />
-    <%= f.file_field :image, name: 'article[images][]',id:"prototype_title" %>
+    <%= f.label :images, "Photo" %><br />
+    <%= f.file_field :images, name: 'article[images][]',id:"prototype_image" %>
   </div>
   <div id="image-list"></div>
   <% if @article.images.present? %>
-  <%= image_tag @article.image, class: 'buy-item-img' %>
+  <%= image_tag @article.images, class: 'buy-item-img' %>
   <% end %>
   <% @article.images.each do |image| %>
   <%= image_tag image, class: 'images' %>
