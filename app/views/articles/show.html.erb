@@ -14,8 +14,10 @@
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
-        <%= image_tag @article.images[0] %>
-      </div>
+      <div id="image-list"></div>
+        <% @article.images.each do |image| %>
+        <%= image_tag image, class: 'images' %>
+      <% end %>
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title">Recommended level</p>
