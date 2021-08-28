@@ -13,6 +13,7 @@ class Article < ApplicationRecord
   belongs_to :safe
 
   with_options presence: true do
+    validates :images
     validates :english_id
     validates :nice_id
     validates :safe_id
