@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :move_set, except: [:index, :new, :create, :show, :destroy, :update]
-  before_action :move_to_index, except: [:index, :new, :create, :show, :destroy, :update]
+  before_action :move_set, except: [:index, :new, :create, :show, :destroy, :update, :search]
+  before_action :move_to_index, except: [:index, :new, :create, :show, :destroy, :update, :search]
 
   def index
     @articles = Article.order("created_at DESC")
@@ -45,9 +45,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def search
+    @articles = Article.search(params[:keyword])
+  end
+
   private
   def article_params
-    params.require(:article).permit(:image, :country, :city, :season, :english_id, :safe_id, :nice_id, :content, images: []).merge(user_id: current_user.id)
+    params.require(:article).permit(:country, :city, :season, :english_id, :safe_id, :nice_id, :content, images: []).merge(user_id: current_user.id)
   end
 
   def move_set
