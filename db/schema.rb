@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_110832) do
     t.bigint "user_id", null: false
     t.bigint "article_id", null: false
     t.text "text", null: false
+    t.text "reply"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
