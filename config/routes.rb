@@ -3,22 +3,21 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: 'articles#index'
-  get 'article_comment_replies_path', to: 'areplies#create'
-  get 'comment_replies', to: 'areplies#create'
+  # get 'article_comment_replies_path', to: 'areplies#create'
+  # post to: 'replies#create'
 
   resources :articles do
     collection do
       get 'search'
     end
     resources :comments, only: :create do
-      resources :replies, only: :create
+      resources :replies
     end
   end
 
-  resources :comments, only: :create do
+  resources :comments do
     resources :replies, only: :create
   end
-
   resources :articles, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :users, only: :show
 end
