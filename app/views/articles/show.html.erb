@@ -61,8 +61,8 @@
       <% if user_signed_in? %>
           <%= form_with(model: [@article, @comment], local: true) do |f| %>
             <div class="field">
-              <%= f.label :text, "Comment" %><br />
-              <%= f.text_field :text, id:"comment_text" %>
+              <%= f.label :comment, "Comment" %><br />
+              <%= f.text_field :comment, id:"comment_text" %>
             </div>
             <div class="actions">
               <%= f.submit "Send", class: :form__btn  %>
@@ -75,23 +75,26 @@
             <% @comments.each do |comments| %>
               <% if comments.present? %>
                 <li class="comments_list">
-                  <%= comments.text %>
+                  <%= comments.comment %>
                   <%= link_to comments.user.nickname, user_path(comments.user.id), class: :comment_user %>
                 </li>
-                <% if comments.reply_comment_id.present? %>
+                <% if comments.replies.present? %>
                   <%#= comments.reply_comment%>
                   <%#= link_to comments.reply_comment.user.nickname, user_path(comments.reply_comment.user.id), class: :comment_user %>
                 <% end %>
-              <%= form_for [@article, @new_comments] do |f| %>
+                <% @comments.each do |comment| %>
+                <% comment.comment %>
+                <%= form_with(model: [comment, @reply], local: true) do |f| %>
            <ul class="collapsible">
               <li>
-              <div class="collapsible-header"><i class="material-icons">message</i>コメントに返信をする</div>
+              <div class="collapsible-header"><i class="material-icons">
                <div class="collapsible-body">
-               <%= f.text_field :reply_comment_id %>
-               <%# #ここ大事！hidden_fieldでフォーム無しに送信先コメントのidをreply_commentに追加 %>
+               <%= f.text_field :reply %>
+               <% #ここ大事！hidden_fieldでフォーム無しに送信先コメントのidをreply_commentに追加 %>
                <%= f.hidden_field :reply_comment, :value => comments.id  %>
                <%= button_tag type:"submit", class: "waves-effect waves-light btn" do %>
                <%= f.submit "投稿する" %>
+          <% end %>
           <% end %>
           <% end %>
          </div>

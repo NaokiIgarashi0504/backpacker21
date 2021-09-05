@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :article
   belongs_to :user
-
-  validates :text, presence: true
+  has_many :replies, dependent: :destroy
+  validates :comment, presence: true
 end

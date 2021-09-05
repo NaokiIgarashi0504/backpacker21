@@ -58,13 +58,13 @@ ActiveRecord::Schema.define(version: 2021_09_01_091804) do
   end
 
   create_table "replies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "article_id", null: false
     t.bigint "comment_id", null: false
+    t.bigint "user_id", null: false
     t.text "reply", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_replies_on_article_id"
     t.index ["comment_id"], name: "index_replies_on_comment_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -84,6 +84,6 @@ ActiveRecord::Schema.define(version: 2021_09_01_091804) do
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
-  add_foreign_key "replies", "articles"
   add_foreign_key "replies", "comments"
+  add_foreign_key "replies", "users"
 end
