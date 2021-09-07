@@ -25,7 +25,11 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
     @reply = Reply.new
-    @replies = @comment.replies.includes(:user)
+    # @comments.each do |comment|
+    #   comment.replies
+    # end
+
+    # @replies = @comment.replies.includes(:user)
   end
 
   def edit

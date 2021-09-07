@@ -16,8 +16,4 @@ class RepliesController < ApplicationController
     params.require(:reply).permit(:reply).merge(user_id: current_user.id, comment_id: params[:comment_id])
   end
 
-  # def comment_params
-  #   params.require(:comment).permit(:comment).merge(user_id: current_user.id, article_id: params[:article_id])
-  # end
-
 end
