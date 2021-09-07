@@ -41,12 +41,29 @@
 
 | Column       | Type       |Options                           |
 | ------       | ---------- | ------------------------------   |
-| comment      | string     | null: false                      |
+| comment      | text     | null: false                      |
 | user         | references | null: false, foreign_key: true   |
+| article         | references | null: false, foreign_key: true   |
 
 
 ### Association
 
 - belongs_to :user
 - belongs_to :article
+
+
+
+## replies テーブル
+
+| Column       | Type       |Options                           |
+| ------       | ---------- | ------------------------------   |
+| reply        | text       | null: false                      |
+| user         | references | null: false, foreign_key: true   |
+| comment         | references | null: false, foreign_key: true   |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :comment
 

@@ -24,6 +24,12 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = Comment.new
     @comments = @article.comments.includes(:user)
+    @reply = Reply.new
+    # @comments.each do |comment|
+    #   comment.replies
+    # end
+
+    # @replies = @comment.replies.includes(:user)
   end
 
   def edit

@@ -5,18 +5,18 @@
         <%= @article.country %>
       </p>
       <%= link_to "by #{@article.user.nickname}", user_path(@article.user.id), class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+
       <% if user_signed_in? && current_user.id == @article.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_article_path, class: :prototype__btn %>
           <%= link_to "削除する", article_path, method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+
       <div class="prototype__image">
         <% @article.images.each do |image| %>
-        <%= image_tag image, class: 'images' %>
-      <% end %>
+          <%= image_tag image, class: 'images' %>
+        <% end %>
       <div class="prototype__body">
         <div class="prototype__detail">
           <p class="detail__title">Recommended level</p>
@@ -56,29 +56,53 @@
         </div>
       </div>
       <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-         <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+
       <% if user_signed_in? %>
           <%= form_with(model: [@article, @comment], local: true) do |f| %>
             <div class="field">
-              <%= f.label :text, "Comment" %><br />
-              <%= f.text_field :text, id:"comment_text" %>
+              <%= f.label :comment, "Comment" %><br />
+              <%= f.text_field :comment, id:"comment_text" %>
             </div>
             <div class="actions">
               <%= f.submit "Send", class: :form__btn  %>
             </div>
           <% end %>
-        <% end %> 
-        <%# // ログインしているユーザーには上記を表示する %>
+      <% end %> 
+
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <% @comments.each do |comments| %>
-              <li class="comments_list">
-                <%= comments.text %>
-                <%= link_to comments.user.nickname, user_path(comments.user.id), class: :comment_user %>
-              </li>
+            <% @comments.each do |comment| %>
+              <% if comment.present? %>
+                <li class="comments_list">
+                  <%= comment.comment %>
+                  <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
+                </li>
+
+                <% comment.replies.each do |reply| %>
+                  <% if reply.present? %>
+                    <li class="comments_list">
+                      <%= reply.reply %>
+                      <%= link_to reply.user.nickname, user_path(reply.user.id), class: :comment_user %>
+                    </li>
+                  <% end %>
+                <% end %>
+
+                  <div class="field">
+                    <%= form_with(model: [comment, @reply], local: true) do |f| %>
+                    <%= f.text_field :reply, id:"comment_text" %>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit "Reply", class: :form__btn  %>
+                  </div>
+                    <% end %>
+              <% end %>
             <% end %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+
+            
+              <ul class="collapsible">
+                <div class="collapsible-header">
+                  <i class="material-icons">
+                </div>
+              </ul>
         </ul>
       </div>
     </div>
