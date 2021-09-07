@@ -76,14 +76,16 @@
                   <%= comment.comment %>
                   <%= link_to comment.user.nickname, user_path(comment.user.id), class: :comment_user %>
                 </li>
+
                 <% comment.replies.each do |reply| %>
                   <% if reply.present? %>
-                    <%= reply.reply %>
-                    <%#= link_to comment.reply.user.nickname, user_path(comment.reply.user.id), class: :comment_user %>
+                    <li class="comments_list">
+                      <%= reply.reply %>
+                      <%= link_to reply.user.nickname, user_path(reply.user.id), class: :comment_user %>
+                    </li>
                   <% end %>
                 <% end %>
 
-                <%# @comments.each do |comment| %>
                   <div class="field">
                     <%= form_with(model: [comment, @reply], local: true) do |f| %>
                     <%= f.text_field :reply, id:"comment_text" %>
@@ -92,7 +94,6 @@
                     <%= f.submit "Reply", class: :form__btn  %>
                   </div>
                     <% end %>
-                <%# end %>
               <% end %>
             <% end %>
 
@@ -102,8 +103,6 @@
                   <i class="material-icons">
                 </div>
               </ul>
-            <%# <% end %>
-            <%# end %>
         </ul>
       </div>
     </div>
