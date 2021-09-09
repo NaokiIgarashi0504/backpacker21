@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-  if ( document.getElementById('prototype_image')){
+  if ( document.getElementById('article_images')){
     const ImageList = document.getElementById('image-list');
 
     const createImageHTML = (blob) => {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
     blobImage.setAttribute('src', blob);
 
     const inputHTML = document.createElement('input')
-    inputHTML.setAttribute('id', `prototype_image_${imageElementNum}`)
+    inputHTML.setAttribute('id', `article_images_${imageElementNum}`)
     inputHTML.setAttribute('name', 'article[images][]')
     inputHTML.setAttribute('type', 'file')
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
 }
 
 
-  document.getElementById('prototype_image').addEventListener('change', function(e){
+  document.getElementById('article_images').addEventListener('change', function(e){
     const file = e.target.files[0];
     const blob = window.URL.createObjectURL(file);
       
