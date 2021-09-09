@@ -2,7 +2,7 @@ class English < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: 'Yes' },
-    { id: 3, name: 'NO' },
+    { id: 3, name: 'No' },
   ]
 
   include ActiveHash::Associations
