@@ -10,37 +10,37 @@
 
   <div class="field">
     <%= f.label :country, "Country" %><br />
-    <%= f.text_field :country, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.text_field :country, class: :form__text, id:"article_country" %>
   </div>
 
   <div class="field">
     <%= f.label :city, "City,Town" %><br />
-    <%= f.text_field :city, class: :form__text, id:"prototype_concept" %>
+    <%= f.text_field :city, class: :form__text, id:"article_city" %>
   </div>
 
   <div class="field">
     <%= f.label :season, "Date" %><br />
-    <%= f.text_field :season, autocomplete: "off", id:"prototype_image" %>
+    <%= f.text_field :season, autocomplete: "off", id:"article_season" %>
   </div>
 
   <div class="field">
     <%= f.label :english_id, "Able to communicate in English" %><br />
-    <%= f.collection_select(:english_id, English.all, :id, :name, {}, {autocomplete: "off", id:"prototype_image"}) %>
+    <%= f.collection_select(:english_id, English.all, :id, :name, {}, {autocomplete: "off", id:"article_english_id"}) %>
   </div>
 
   <div class="field">
     <%= f.label :safe_id, "Safety level" %><br />
-    <%= f.collection_select(:safe_id, Safe.all, :id, :name, {}, {autocomplete: "off", id:"prototype_image"}) %>
+    <%= f.collection_select(:safe_id, Safe.all, :id, :name, {}, {autocomplete: "off", id:"article_safe_id"}) %>
   </div>
 
   <div class="field">
     <%= f.label :nice_id, "Recommended level" %><br />
-    <%= f.collection_select(:nice_id, Nice.all, :id, :name, {}, {autocomplete: "off", id:"prototype_image"}) %>
+    <%= f.collection_select(:nice_id, Nice.all, :id, :name, {}, {autocomplete: "off", id:"article_nice_id"}) %>
   </div>
 
   <div class="field">
     <%= f.label :content, "Free article" %><br />
-    <%= f.text_area :content, autocomplete: "off", id:"prototype_image" %>
+    <%= f.text_area :content, autocomplete: "off", id:"article_content" %>
   </div>
 
   <div class="actions">

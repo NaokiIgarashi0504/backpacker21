@@ -4,7 +4,7 @@ RSpec.describe "ユーザー新規登録", type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
-  def basic_auth(path) # ここを追記
+  def basic_auth(path)
     name = ENV["BASIC_USER"]
     password = ENV["BASIC_PASSWORD"]
     visit "http://#{name}:#{password}@#{Capybara.current_session.server.host}:# {Capybara.current_session.server.port}#{path}"

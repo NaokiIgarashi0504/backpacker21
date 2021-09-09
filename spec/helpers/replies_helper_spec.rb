@@ -11,5 +11,6 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe RepliesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  config.use_transactional_fixtures = true
+  # pending "add some examples to (or delete) #{__FILE__}"
 end
