@@ -1,7 +1,7 @@
 <%= form_with model: article, local: true do |f|%>
   <div class="field">
     <%= f.label :images, "Photos cannot be edited" %><br />
-    <%= f.file_field :images, name: 'article[images][]',id:"prototype_image" %>
+    <%= f.file_field :images, name: 'article[images][]',id:"article_images" %>
   </div>
   <div id="image-list"></div>
   <% @article.images.each do |image| %>
