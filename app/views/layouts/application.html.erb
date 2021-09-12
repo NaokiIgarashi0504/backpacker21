@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Backpacker21</title>
+    <title>Backpacker200209</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,12 +15,12 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <h1 class="grid-6"><a href="/">Backpacker21</a></h1>
+            <h1 class="grid-6"><a href="/"><div class="mark">Backpacker200209</div></a></h1>
           </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %>
             <div class="nav__right">
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: :nav__logout %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: :nav__btn %>
               <%= link_to "New Article", new_article_path, class: :nav__btn %>
             </div>
           <%# // ログインしているときは上記を表示するようにしましょう %>
@@ -37,7 +37,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © Backpacker 21 All rights reserved.</p>
+      <p class="copyright">Copyright © Backpacker 200209 All rights reserved.</p>
     </footer>
   </body>
 </html>

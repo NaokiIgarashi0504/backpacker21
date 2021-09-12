@@ -1,7 +1,7 @@
 <%= form_with model: article, local: true do |f|%>
   <div class="field">
     <%= f.label :images, "Photos cannot be edited" %><br />
-    <%= f.file_field :images, name: 'article[images][]',id:"article_images" %>
+    <%= f.file_field :images, name: 'article[images][]', id:"article_images" %>
   </div>
   <div id="image-list"></div>
   <% @article.images.each do |image| %>
@@ -10,17 +10,17 @@
 
   <div class="field">
     <%= f.label :country, "Country" %><br />
-    <%= f.text_field :country, class: :form__text, id:"article_country" %>
+    <%= f.text_field :country, placeholder: "Country in english", class: :form__text, id:"article_country" %>
   </div>
 
   <div class="field">
     <%= f.label :city, "City,Town" %><br />
-    <%= f.text_field :city, class: :form__text, id:"article_city" %>
+    <%= f.text_field :city, placeholder: "Cities and cities in English", class: :form__text, id:"article_city" %>
   </div>
 
   <div class="field">
     <%= f.label :season, "Date" %><br />
-    <%= f.text_field :season, autocomplete: "off", id:"article_season" %>
+    <%= f.text_field :season, placeholder: "●●●●-●●-●●", autocomplete: "off", id:"article_season" %>
   </div>
 
   <div class="field">
@@ -39,7 +39,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :content, "Free article" %><br />
+    <%= f.label :content, "Free article  (example ・hotel ・Cash exchange ・transportation)" %><br />
     <%= f.text_area :content, autocomplete: "off", id:"article_content" %>
   </div>
 
