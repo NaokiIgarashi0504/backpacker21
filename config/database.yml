@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: backpacker21_production
-  username: backpacker21
-  password: <%= ENV['BACKPACKER21_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
