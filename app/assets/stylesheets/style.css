@@ -37,14 +37,14 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #272319;
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 .inner {
   width: 1024px;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;

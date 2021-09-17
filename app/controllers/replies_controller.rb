@@ -5,9 +5,7 @@ class RepliesController < ApplicationController
     if @reply.save
       redirect_to "/articles/#{@comment.article.id}"
     else
-      @comment = @reply.comment
-      @replies = @comment.replies
-      render "articles/show"
+      redirect_to "/articles/#{@comment.article.id}"
     end
   end
 
