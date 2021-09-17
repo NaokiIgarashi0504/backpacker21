@@ -15,7 +15,7 @@
 
       <div class="prototype__image">
         <% @article.images.each do |image| %>
-          <%= image_tag image, class: 'images' %>
+          <%= image_tag image, class: :card__imgs %>
         <% end %>
       <div class="prototype__body">
         <div class="prototype__detail">
@@ -60,11 +60,11 @@
       <% if user_signed_in? %>
           <%= form_with(model: [@article, @comment], local: true) do |f| %>
             <div class="field">
-              <%= f.label :comment, "Comment" %><br />
-              <%= f.text_field :comment, id:"comment_text" %>
+              <%= f.label :comment, "Comment", class: :comment_font %><br />
+              <%= f.text_field :comment, class: :comment_form, id:"comment_text" %>
             </div>
             <div class="actions">
-              <%= f.submit "Send", class: :form__btn2  %>
+              <%= f.submit "Send", class: :form__btn3  %>
             </div>
           <% end %>
       <% end %> 
@@ -89,7 +89,7 @@
                 <% if user_signed_in? %>
                   <div class="field">
                     <%= form_with(model: [comment, @reply], local: true) do |f| %>
-                    <%= f.text_field :reply, id:"comment_text" %>
+                    <%= f.text_field :reply, class: :comment_form, id:"comment_text" %>
                   </div>
                   <div class="actions">
                     <%= f.submit "Reply", class: :form__btn2 %>
