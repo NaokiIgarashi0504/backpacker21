@@ -12,13 +12,13 @@
 
   <body>
     <header class="header">
-      <div class="inner">
-        <div class="nav">
+    <div class="nav">
           <div class="nav__left">
-            <h1 class="grid-6"><a href="/"><div class="mark">
-            <%= image_tag "logo1.png", class:"furima-icon" %>
-            </div></a></h1>
+            <a href="/">
+            <%= image_tag "logo8.png", class:"icon" %>
           </div>
+          <div class="font">Backpacker</div>
+          </a>
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %>
             <div class="nav__right">
@@ -35,6 +35,8 @@
           <% end %>
           <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
+      <div class="inner">
+        
       </div>
     </header>
     <%= yield %>
