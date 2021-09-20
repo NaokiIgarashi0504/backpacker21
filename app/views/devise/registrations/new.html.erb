@@ -7,12 +7,12 @@
 
         <div class="field">
           <%= f.label :nickname %><br />
-          <%= f.text_field :nickname, autofocus: true %>
+          <%= f.text_field :nickname, autofocus: true, class: :form__nickname %>
         </div>
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email %>
+          <%= f.email_field :email, class: :form__email %>
         </div>
 
         <div class="field">
@@ -20,7 +20,7 @@
           <% if @minimum_password_length %>
             <em>(Password length must be <%= @minimum_password_length %> characters or longer)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.password_field :password, autocomplete: "off", class: :form__password %>
         </div>
 
         <div class="actions">
