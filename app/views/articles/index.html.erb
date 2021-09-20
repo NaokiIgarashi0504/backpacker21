@@ -1,20 +1,16 @@
 <main class="main">
   <div class="inner">
-  <% if user_signed_in? %>
+    <% if user_signed_in? %>
       <div class="greeting">
         Welcome
         <%= link_to "#{current_user.nickname}", user_path(current_user.id), class: :greeting__link %>
       </div>
     <%end%>
-  <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "Search for a country", class: "search-input" %>
-  <%= form.submit "Search", class: "search-btn" %>
-<% end %>
-    <%# ログインしているときは以下を表示する %>
-    
-    <%# // ログインしているときは上記を表示する %>
+    <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "Search for a country", class: "search-input" %>
+      <%= form.submit "Search", class: "search-btn" %>
+    <% end %>
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       <%= render partial: 'article', collection: @articles %>
     </div>
   </div>

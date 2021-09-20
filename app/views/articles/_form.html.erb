@@ -4,9 +4,9 @@
     <%= f.file_field :images, name: 'article[images][]', class: :form_image, id:"article_images" %>
   </div>
   <div id="image-list"></div>
-  <% @article.images.each do |image| %>
-  <%= image_tag image, class: 'images' %>
-<% end %>
+    <% @article.images.each do |image| %>
+    <%= image_tag image, class: 'images' %>
+    <% end %>
 
   <div class="field">
     <%= f.label :country, "Country" %><br />
