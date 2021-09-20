@@ -4,7 +4,7 @@
 </p>
 <br />
 <p align="center">
-  <img src="app/assets/images/Videotogif.gif" width=100% >
+  <img src="app/assets/images/024ab734e8cdffd5c8be6e1faa72f93a.gif" width=100% >
 </p>
 <br />
 <br />
