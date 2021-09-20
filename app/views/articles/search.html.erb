@@ -1,13 +1,13 @@
 <main class="main">
-<div class="inner">
-<%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "Search for a country", class: "search-input" %>
-  <%= form.submit "Search", class: "search-btn" %>
-<% end %>
-<div class="card__wrapper">
-  <% @articles.each do |article| %>
-    <%= render partial: "article", locals: { article: article } %>
-  <% end %>
-</div>
-</div>
+  <div class="inner">
+    <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "Search for a country", class: "search-input" %>
+      <%= form.submit "Search", class: "search-btn" %>
+    <% end %>
+    <div class="card__wrapper">
+      <% @articles.each do |article| %>
+        <%= render partial: "article", locals: { article: article } %>
+      <% end %>
+    </div>
+  </div>
 </main>

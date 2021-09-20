@@ -12,31 +12,28 @@
 
   <body>
     <header class="header">
-    <div class="nav">
+      <div class="nav">
           <div class="nav__left">
             <a href="/">
-            <%= image_tag "logo8.png", class:"icon" %>
+              <%= image_tag "logo8.png", class:"icon" %>
           </div>
-          <div class="font">Backpacker</div>
-          </a>
-          <%# ログインしているときは以下を表示するようにしましょう %>
+              <div class="font">Backpacker</div>
+            </a>
+
           <% if user_signed_in? %>
             <div class="nav__right">
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: :nav__btn %>
               <%= link_to "New Article", new_article_path, class: :nav__btn %>
             </div>
-          <%# // ログインしているときは上記を表示するようにしましょう %>
-          <%# ログインしていないときは以下を表示するようにしましょう %>
+
           <% else %>
             <div class="nav__right">
               <%= link_to "Login", new_user_session_path, class: :nav__btn %>
               <%= link_to "SignUp", new_user_registration_path, class: :nav__btn %>
             </div>
           <% end %>
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
-        </div>
+      </div>
       <div class="inner">
-        
       </div>
     </header>
     <%= yield %>
