@@ -1,10 +1,10 @@
 <h2 align="center">BACKPACKER200209</h2>
 <p align="center">
-  <img src="app/assets/images/logo8.png" width=40% >
+  <img src="app/assets/images/logo8.png" width=30% >
 </p>
 <br />
 <p align="center">
-  <img src="app/assets/images/Videotogif.gif" width=80% height=220px>
+  <img src="app/assets/images/Videotogif.gif" width=100% >
 </p>
 <br />
 <br />
