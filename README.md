@@ -61,7 +61,7 @@ $ rails s
 下記の動画は詳細ページです。  
 <br />
 <p align="center">
-  <img src="app/assets/images/f1b1e5fd9257583414a06ea12e875b62.gif" width=100% >
+  <img src="app/assets/images/f1b1e5fd9257583414a06ea12e875b62.gif" width=80% >
 </p>  
 上から、行った国、写真、おすすめ度、安全度、行った街、行った日にち、英語が通じるのか、自由記事となっています。  
 <br />
@@ -70,7 +70,7 @@ $ rails s
 <br />
 <br />
 <p align="center">
-  <img src="app/assets/images/45c5c6dbb3d101ea091dbf916c73bd18.gif" width=100% >
+  <img src="app/assets/images/45c5c6dbb3d101ea091dbf916c73bd18.gif" width=80% >
 </p>  
 ユーザーは投稿することもでき、母国の事を載せるだけでも、他国の人からしたら貴重な情報ですので、投稿のハードルも高くなく気軽に投稿でき、自分の経験を共有することができます。  
 <br />
@@ -86,7 +86,7 @@ $ rails s
 ユーザーが投稿した記事が載っています。
 <br /><br />
 <p align="center">
-  <img src="https://i.gyazo.com/c8978553a3275a861312562b24f1d428.gif" width=100% >
+  <img src="app/assets/images/c8978553a3275a861312562b24f1d428.gif" width=80% >
 </p>
 <br />
 <br />
