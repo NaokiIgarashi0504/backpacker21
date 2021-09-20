@@ -1,7 +1,7 @@
 <%= form_with model: article, local: true do |f|%>
   <div class="field">
     <%= f.label :images, "Photos cannot be edited" %><br />
-    <%= f.file_field :images, name: 'article[images][]', id:"article_images" %>
+    <%= f.file_field :images, name: 'article[images][]', class: :form_image, id:"article_images" %>
   </div>
   <div id="image-list"></div>
   <% @article.images.each do |image| %>
@@ -20,27 +20,27 @@
 
   <div class="field">
     <%= f.label :season, "Date" %><br />
-    <%= f.text_field :season, placeholder: "●●●●-●●-●●", autocomplete: "off", id:"article_season" %>
+    <%= f.text_field :season, placeholder: "●●●●-●●-●●", autocomplete: "off", class: :form__date, id:"article_season" %>
   </div>
 
   <div class="field">
     <%= f.label :english_id, "Able to communicate in English" %><br />
-    <%= f.collection_select(:english_id, English.all, :id, :name, {}, {autocomplete: "off", id:"article_english_id"}) %>
+    <%= f.collection_select(:english_id, English.all, :id, :name, {}, {autocomplete: "off", class: :select, id:"article_english_id"}) %>
   </div>
 
   <div class="field">
     <%= f.label :safe_id, "Safety level" %><br />
-    <%= f.collection_select(:safe_id, Safe.all, :id, :name, {}, {autocomplete: "off", id:"article_safe_id"}) %>
+    <%= f.collection_select(:safe_id, Safe.all, :id, :name, {}, {autocomplete: "off", class: :select, id:"article_safe_id"}) %>
   </div>
 
   <div class="field">
     <%= f.label :nice_id, "Recommended level" %><br />
-    <%= f.collection_select(:nice_id, Nice.all, :id, :name, {}, {autocomplete: "off", id:"article_nice_id"}) %>
+    <%= f.collection_select(:nice_id, Nice.all, :id, :name, {}, {autocomplete: "off", class: :select, id:"article_nice_id"}) %>
   </div>
 
   <div class="field">
     <%= f.label :content, "Free article  (example ・hotel ・Cash exchange ・transportation)" %><br />
-    <%= f.text_area :content, autocomplete: "off", id:"article_content" %>
+    <%= f.text_area :content, class: :form__content, autocomplete: "off", id:"article_content" %>
   </div>
 
   <div class="actions">
