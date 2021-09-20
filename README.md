@@ -4,7 +4,7 @@
 </p>
 <br />
 <p align="center">
-  <img src="https://i.gyazo.com/024ab734e8cdffd5c8be6e1faa72f93a.gif" width=60%>
+  <img src="app/assets/images/Videotogif.gif" width=60%>
 </p>
 <br />
 <br />
