@@ -1,10 +1,10 @@
 <h2 align="center">BACKPACKER200209</h2>
 <p align="center">
-  <img src="logo8.jpg" width=40%>
+  <img src="app/assets/images/logo8.png" width=40% >
 </p>
 <br />
 <p align="center">
-  <img src="readme1.jpg" width=40%>
+  <img src="https://i.gyazo.com/024ab734e8cdffd5c8be6e1faa72f93a.gif" width=60%>
 </p>
 <br />
 <br />
@@ -29,6 +29,8 @@ $ rails db:migrate
 $ rails s
 
 👉 http://localhost:3000
+
+<br />
 
 ## 🌏  制作背景
 2020年の2月から1ヶ月間で、自分にとっては初めての海外でしたがバックパッカーという形で、ベトナム、ラオス、タイ、マレーシアの4カ国に行きました。  
