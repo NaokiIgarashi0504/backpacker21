@@ -14,6 +14,12 @@
 ### **https://backpacker21.herokuapp.com/**  
 <br />
 
+ログイン用アカウント  
+メールアドレス：tounan@com  
+パスワード：tounan1
+
+<br />
+
 ### <p align="center">構築方法</p>
 
 $ git clone https://github.com/aocattleya/hoge.git  
